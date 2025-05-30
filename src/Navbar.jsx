@@ -1,18 +1,25 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
+import bmw from './bmw.png';
 
 const Nav = styled.nav`
-  background-color: #0077cc;
   padding: 16px;
+  width: 1000px;
   display: flex;
   gap: 20px;
+  justify-content: center;
+  align-items: center;
+  
+  position: relative;
 `;
 
 const StyledLink = styled(NavLink)`
+  width: 100px;
+  text-decoration: none;  
   color: white;
-  text-decoration: none;
-  font-weight: 500;
+  position: relative;
+  
 
   &.active {
     font-weight: bold;
@@ -24,9 +31,19 @@ const StyledLink = styled(NavLink)`
   }
 `;
 
+const Logo = styled.img`
+  width: 50px;   
+  height: auto;
+  position: relative;
+  left: -150px;
+`;
+
 const Navbar = () => {
   return (
     <Nav>
+      <StyledLink to="/" end>
+        <Logo src={bmw} alt="Logo" />
+      </StyledLink>
       <StyledLink to="/" end>
         Home
       </StyledLink>
